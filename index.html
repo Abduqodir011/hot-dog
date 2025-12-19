@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMO_Hot-dog</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial
+        }
+
+        body {
+            background: #0f0f0f;
+            color: #fff
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff0000, #ff9900);
+            padding: 25px;
+            text-align: center
+        }
+
+        header h1 {
+            font-size: 34px
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 30px 0
+        }
+
+        .title {
+            font-size: 26px;
+            margin: 20px 0;
+            border-left: 5px solid #ff9900;
+            padding-left: 10px
+        }
+
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px
+        }
+
+        .card {
+            display: flex;
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 12px
+        }
+
+        .card h3 {
+            margin-bottom: 8px
+        }
+
+        .price {
+            color: #ff9900;
+            font-weight: bold
+        }
+
+        .card button {
+            margin-top: 10px
+        }
+
+        button {
+            background: #ff9900;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold
+        }
+
+        button:hover {
+            background: #ffb733
+        }
+
+        .cart {
+            background: #111;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 12px
+        }
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .8);
+            display: none;
+            align-items: center;
+            justify-content: center
+        }
+
+        .modal-content {
+            background: #1a1a1a;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 400px
+        }
+
+        .modal input,
+        .modal textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: none
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #111
+        }
+        .rasm{
+            width: 120px;
+            margin-left: 50px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>SAMO_Hot-dog</h1>
+        <p>Tezkor • Issiq • Mazali</p>
+    </header>
+
+    <div class="container">
+
+        <h2 class="title">🍔 Menyu</h2>
+        <div class="menu">
+            <div class="card">
+                 <div class="abror">
+                    <h3>Hot-Dog mini</h3>
+                    <p class="price">10 000 so‘m</p>
+                    <button onclick="addToCart('Hot Dog',10000)">Savatchaga</button>
+                 </div>
+                  <img class="rasm" src="https://transcode-v2.app.engoo.com/image/fetch/f_auto,c_limit,w_1200,h_630,dpr_1/https://assets.app.engoo.com/images/7SkfFOR6F9kDNMPW5kJTzX.jpeg" alt="">
+            </div>
+            <div class="card">
+                 <div class="abror">
+                    <h3>Hot-Dog</h3>
+                    <p class="price">20 000 so‘m</p>
+                    <button onclick="addToCart('Hot Dog',20000)">Savatchaga</button>
+                 </div>
+                <img class="rasm"
+                    src="https://transcode-v2.app.engoo.com/image/fetch/f_auto,c_limit,w_1200,h_630,dpr_1/https://assets.app.engoo.com/images/7SkfFOR6F9kDNMPW5kJTzX.jpeg"
+                    alt="">
+            </div>
+            <div class="card">
+                 <div class="abror">
+                    <h3>Hot-Dog big</h3>
+                    <p class="price">28 000 so‘m</p>
+                    <button onclick="addToCart('Hot Dog',28000)">Savatchaga</button>
+                 </div>
+                <img class="rasm"
+                    src="https://transcode-v2.app.engoo.com/image/fetch/f_auto,c_limit,w_1200,h_630,dpr_1/https://assets.app.engoo.com/images/7SkfFOR6F9kDNMPW5kJTzX.jpeg"
+                    alt="">
+            </div>
+            <div class="card">
+                 <div class="abror">
+                    <h3>Lavash mini</h3>
+                    <p class="price">26 000 so‘m</p>
+                    <button onclick="addToCart('Lavash',28000)">Savatchaga</button>
+                 </div>
+                 <img class="rasm" src="https://imageproxy.wolt.com/menu/menu-images/shared/e3a2ec5a-794b-11ee-93a3-fe6ab45d5259_et_lavash.jpg" alt="">
+            </div>
+            <div class="card">
+                <div class="abror">
+                    <h3>Lavash</h3>
+                    <p class="price">35 000 so‘m</p>
+                    <button onclick="addToCart('Lavash',28000)">Savatchaga</button>
+                </div>
+                <img class="rasm"
+                    src="https://imageproxy.wolt.com/menu/menu-images/shared/e3a2ec5a-794b-11ee-93a3-fe6ab45d5259_et_lavash.jpg" alt="">
+            </div>
+            <div class="card">
+                 <div class="abror">
+                    <h3>Lavash big</h3>
+                    <p class="price">41 000 so‘m</p>
+                    <button onclick="addToCart('Lavash',28000)">Savatchaga</button>
+                 </div>
+                <img class="rasm"
+                    src="https://imageproxy.wolt.com/menu/menu-images/shared/e3a2ec5a-794b-11ee-93a3-fe6ab45d5259_et_lavash.jpg" alt="">
+            </div>
+            <div class="card">
+                 <div class="abror">
+                    <h3>Burger mini</h3>
+                    <p class="price">25 000 so‘m</p>
+                    <button onclick="addToCart('Burger',25000)">Savatchaga</button>
+                 </div>
+                 <img class="rasm" src="https://img.freepik.com/premium-photo/burger-with-bacon-cheese-it_759095-3714.jpg" alt="">
+            </div>
+            <div class="card">
+                 <div class="abror">
+                    <h3>Burger</h3>
+                    <p class="price">34 000 so‘m</p>
+                    <button onclick="addToCart('Burger',34000)">Savatchaga</button>
+                 </div>
+                <img class="rasm" src="https://img.freepik.com/premium-photo/burger-with-bacon-cheese-it_759095-3714.jpg" alt="">
+            </div>
+            <div class="card">
+                 <div class="abror">
+                    <h3>Burger big</h3>
+                    <p class="price">39 000 so‘m</p>
+                    <button onclick="addToCart('Burger',39000)">Savatchaga</button>
+                 </div>
+                <img class="rasm" src="https://img.freepik.com/premium-photo/burger-with-bacon-cheese-it_759095-3714.jpg" alt="">
+            </div>
+            <div class="card">
+                 <div class="abror">
+                    <h3>pepsi razliv</h3>
+                    <p class="price">11 000 so‘m</p>
+                    <button onclick="addToCart('Ichimlik',11000)">Savatchaga</button>
+                 </div>
+                 <img class="rasm" src="https://avatars.mds.yandex.net/get-eda/1397595/d703f42135f8473d70d096a795075027/M_height" alt="">
+            </div>
+            <div class="card">
+                 <div class="abror">
+                    <h3>cola razliv</h3>
+                    <p class="price">11 000 so‘m</p>
+                    <button onclick="addToCart('Ichimlik',8000)">Savatchaga</button>
+                 </div>
+                <img class="rasm" src="https://i.pinimg.com/736x/c6/7f/67/c67f6725560ce076e94cd5746023a175.jpg" alt="">
+            </div>
+            <div class="card">
+                 <div class="abror">
+                    <h3>limon choy</h3>
+                    <p class="price">6 000 so‘m</p>
+                    <button onclick="addToCart('Ichimlik',8000)">Savatchaga</button>
+                 </div>
+                <img class="rasm" src="https://comments.ua/img/publications/XSGREemTHlEwBWJ9rUewS0KdfDJTrnD0.jpg" alt="">
+            </div>
+            <div class="card">
+                 <div class="abror">
+                    <h3>kofe</h3>
+                    <p class="price">6 000 so‘m</p>
+                    <button onclick="addToCart('Ichimlik',8000)">Savatchaga</button>
+                 </div>
+                <img class="rasm" src="https://avatars.mds.yandex.net/i?id=c026211959869bdb679b53e51321630728b4512a-10703102-images-thumbs&n=13" alt="">
+            </div>
+        </div>
+
+        <h2 class="title">🛒 Savatcha</h2>
+        <div class="cart" id="cart">
+            <p>Hozircha bo‘sh</p>
+        </div>
+        <h3 id="total">Jami: 0 so‘m</h3>
+
+        <button onclick="checkout()">Zakaz berish</button>
+
+        <h2 class="title">🚚 Dastavka</h2>
+        <p>Yetkazib berish: <b>10 000 so‘m</b> (15–35 daqiqa)</p>
+
+        <h2 class="title">📞 Aloqa</h2>
+        <div class="actions">
+            <a href="tel:+998333003930"><button>Telefon</button></a>
+            <a href="https://t.me/qob1lovc"><button>Telegram</button></a>
+            <a href="https://wa.me/998333003930"><button>WhatsApp</button></a>
+            <button onclick="openModal()">Operator</button>
+        </div>
+
+        <h2 class="title">📍 Manzil</h2>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3014.7751779033824!2d69.43082481126747!3d41.37515746008072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38aef100001da01f%3A0x50dcd59ffdb45887!2z0JDRgNCz0LjQvSDQotCw0LHQsNC60LA!5e0!3m2!1sru!2s!4v1766135685059!5m2!1sru!2s"></iframe>
+        </div>
+
+    </div>
+
+    <footer>© 2025 SAMO_Hot-dog</footer>
+
+    <!-- MODAL -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h3>Zakaz formasi</h3>
+            <input placeholder="Ismingiz">
+            <input placeholder="Telefon">
+            <textarea placeholder="Manzil"></textarea>
+            <button onclick="sendOrder()">Yuborish</button>
+            <button onclick="closeModal()">Yopish</button>
+        </div>
+    </div>
+
+    <script>
+        let cart = []
+        let total = 0
+        const delivery = 10000
+
+        function addToCart(name, price) {
+            cart.push({ name, price })
+            total += price
+            renderCart()
+        }
+
+        function renderCart() {
+            const c = document.getElementById("cart")
+            c.innerHTML = ""
+            cart.forEach((i) => {
+                c.innerHTML += <div class="cart-item"><span>${i.name}</span><span>${i.price} so‘m</span></div>
+            })
+            document.getElementById("total").innerText = "Jami: " + (total + delivery) + " so‘m"
+        }
+
+        function checkout() {
+            if (cart.length == 0) { alert("Savatcha bo‘sh"); return }
+            openModal()
+        }
+        function openModal() { document.getElementById("modal").style.display = "flex" }
+            function closeModal() { document.getElementById("modal").style.display = "none" }
+            function sendOrder() {
+                alert("Zakazingiz qabul qilindi! Operator bog‘lanadi.")
+                cart = []; total = 0
+                renderCart()
+                closeModal()
+            }
+        </script>
+
+</body>
+
+</html>
